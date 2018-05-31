@@ -3,6 +3,11 @@
 @media #{$desktopMega} {
     @import '../desktop';
     & {
-    	
+      .footer .phone {
+        right: 5.36458vw;
+      }
+      .footer .logo-text, nav .logo-text {
+        left: 5.36458vw;
+      }
     }
 }

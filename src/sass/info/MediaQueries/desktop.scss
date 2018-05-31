@@ -1,10 +1,14 @@
 @import '../../mq';
 
 @media #{$desktop} {
-    @import '../desktop';
-    & {
-	  
+  @import '../desktop';
+  & {
+    .menu {
+      padding-left: 80px;
     }
+    .copyrighted {
+      padding-left: 50px;
+    }
+    
+  }
 }
-
-

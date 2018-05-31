@@ -23,7 +23,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   padding: 90px 0;
-
+  position: relative;
 }
 
 nav {
@@ -32,6 +32,25 @@ nav {
   left: 0;
   width: 100%;
   padding: vw(43px) 0;
+  z-index: 999;
+  transition: 0.5s;
+  
+  &.fixed {
+    position: fixed;
+    padding: 17px 0;
+    background: #fff;
+    .logo-text {
+      top: 5px;
+      color: #000;
+    }
+    .call-me  {
+      top: 13px;
+      color: #000;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
   .logo-text {
     position: absolute;
     top: vw(37px);
@@ -42,7 +61,7 @@ nav {
     font-weight: 400;
     line-height: vw(21px);
     letter-spacing: 1.6px;
-    padding-bottom: 17px;
+    padding-bottom: vw(17px);
     &:before {
       content: "";
       width: vw(19px);
@@ -360,7 +379,7 @@ font-weight: 400;
   margin-top: 199px;
   background: url('../images/ds6gfr8.png') no-repeat center;
   .ml-auto {
-    .col-lg-6 {
+    .col-lg-6, .col-xl-6 {
       padding: 0;
     }
   }
@@ -976,6 +995,40 @@ margin-bottom: 50px;
      max-width: 190px;
     width: 100%;
      counter-reset: list; 
+    *:focus {
+      outline: none;
+    }
+    &.more-hide {
+      &:before {
+        display: none;
+      }
+      .owl-dot {
+            width: 38px;
+        &:last-child {
+          float: none;
+        }
+        &.active {
+          +.owl-dot {
+              position: relative;
+              bottom: 0;
+              opacity: 1;
+              display: inline-block;
+          +.owl-dot {
+            position: relative;
+            bottom: 0;
+            opacity: 1;
+            display: inline-block;
+            +.owl-dot {
+            position: relative;
+            bottom: 0;
+            opacity: 1;
+            display: inline-block;
+            }
+          }
+        }
+        }
+      }
+    }
     &:before {
       content: ". . . .";
       color: #000000;
@@ -1091,6 +1144,13 @@ margin-bottom: 50px;
     font-family: "Futura Futuris Light C";
     font-size: 18px;
     font-weight: 400;
+    padding-bottom: 50px;
+    
+    &.video-tab {
+      max-height: inherit;
+      padding-bottom: 50px;
+    }
+   
     &.active {
       display: block;
     }
@@ -1122,5 +1182,785 @@ margin-bottom: 50px;
       background-color: #fe4040;
       color: #ffffff;
     }
+  }
+}
+
+.guarantee {
+  background: url('../images/bg5.png') no-repeat center;
+  padding: 60px 0;
+  min-height: 1203px;
+}
+
+.guarantee-title {
+  max-width: 325px;
+  margin: 0 auto;
+  margin-top: 60px;
+  h2 {
+    color: #000000;
+    font-family: "Gilroy - Extra Bold";
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 58px;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+  }
+  .bottom {
+    padding-left: 65px;
+    position: relative;
+    &:before {
+      content: "";
+      width: 39px;
+      height: 6px;
+      background: #000;
+      position: absolute;
+      top: 13px;
+      left: 0;
+    }
+    h4 {
+      color: #fe4040;
+      font-family: "Gilroy - Extra Bold";
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #767676;
+      font-family: "Futura Medium C";
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+  }
+  margin-bottom: 210px;
+}
+
+.guarantee-item {
+  h3 {
+    color: #000000;
+    font-family: "Gilroy - Extra Bold";
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    line-height: 1.2;
+  }
+  p {
+    margin-bottom: 0;
+    color: #767676;
+    font-family: "Futura Futuris Light C";
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+}
+
+.guarantee-info {
+  color: #767676;
+  font-family: "Futura Medium C";
+  font-size: 20px;
+  font-weight: 400;
+  padding-top: 90px;
+  position: relative;
+  margin-bottom: 51px;
+  &:before {
+    content: "";
+    height: 6px;
+    width: 39px;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.price {
+  background-color: #f4f4f4;
+  background-image: url('../images/bg-copy-2.png');
+  background-repeat: no-repeat;
+  background-position: vw(1005px) 24px;
+  padding: 75px 0 200px;
+}
+
+.price-title {
+  text-align: center;
+  margin-bottom: 95px;
+  color: #000000;
+  font-family: "Gilroy - Extra Bold";
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 58px;
+  text-transform: uppercase;
+}
+
+.price-item {
+  &:last-child {
+    .box {
+      padding-top: 108px;
+      padding-left: 50px;
+      padding-right: 50px;
+      ul {
+        min-height: 557px;
+      }
+    }
+    .timer {
+      margin-top: 144px;
+    }
+  }
+  h4 {
+    text-align: center;
+    color: #fe4040;
+    font-family: "Gilroy - Extra Bold";
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 30px;
+  }
+  .box {
+    box-shadow: 0 16px 46px rgba(0, 0, 0, 0.22);
+    background-color: #ffffff;
+    padding: 30px;
+    padding-bottom: 50px;
+    position: relative;
+    .package {
+      color: #fe4040;
+      font-family: "Gilroy - Extra Bold";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin-bottom: 20px;
+      min-height: 635px;
+      li {
+        padding-left: 32px;
+        margin-bottom: 25px;
+        position: relative;
+        &.befo-none {
+          
+          &:before {
+            display: none;
+          }
+        }
+        &:before {
+          content: "";
+          background: url('../images/forma-1-copy-25.svg') no-repeat center;
+          width: 16px;
+          height: 9px;
+          position: absolute;
+          top: 3px;
+          left: 0;
+        }
+        h6 {
+          color: #000000;
+          font-family: "Futura Medium C";
+          font-size: 16px;
+          font-weight: 900;
+          margin-bottom: 10px;
+          line-height: 1.2;
+        }
+        p {
+          color: #767676;
+          font-family: "Futura Futuris Light C";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-bottom: 0;
+        }
+      }
+    }
+    .row {
+      .col-6 {
+        padding: 0;
+      }
+    }
+  }
+  .discount {
+    color: #000000;
+    font-family: "Gilroy - Extra Bold";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 36px;
+    text-transform: uppercase;
+    padding-left: 32px;
+    span {
+      color: #fe4040;
+      font-size: 24px;
+      display: block;
+    }
+  }
+  .summ {
+    .summ-title {
+      color: #000000;
+      font-family: "Gilroy - Extra Bold";
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 36px;
+    }
+    color: #767676;
+    font-family: "Futura Medium C";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+    .top {
+      color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    }
+    &.old {
+      color: #cacaca;
+      font-family: "Futura Medium C";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      text-decoration: line-through;
+      text-transform: uppercase;
+      padding-top: 36px;
+    }
+  }
+  .capcha {
+    color: #ffffff;
+    font-family: "Futura Medium C";
+    font-size: 16px;
+    font-weight: 400;
+    transform-origin: left center;
+    background-color: #000000;
+    padding: 3px 12px 2px 15px;
+    position: absolute;
+    top: 144px;
+    left: 0;
+    transform: rotate(-90deg);
+  }
+}
+
+.timer {
+  text-align: center;
+  h5 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #767676;
+    font-family: "Futura Medium C";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 1.4px;
+  }
+}
+
+.footer {
+  position: relative;
+  background-color: #f9f9f9;
+  padding: vw(60px) 0 vw(50px);
+
+  .logo-text {
+    color: #000000;
+    font-family: "Gilroy - Extra Bold";
+    font-size: vw(16px);
+    font-weight: 400;
+    line-height: vw(21px);
+    letter-spacing: vw(1.6px);
+    position: absolute;
+    top: vw(60px);
+    left: vw(15px);
+    padding-bottom: vw(17px);
+    &:before {
+      content: "";
+      width: vw(19px);
+      height: vw(4px);
+      background: #000;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .phone {
+    color: #000000;
+    font-family: "Futura Medium C";
+    font-size: vw(14px);
+    font-weight: 400;
+    position: absolute;
+    bottom: inherit;
+    top: vw(59px);
+    right: vw(15px);
+  }
+  .call-me {
+    position: static;
+    color: #000000;
+    font-size: vw(14px);
+    font-weight: 400;
+    letter-spacing: vw(1.4px);
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.copyrighted {
+  color: #767676;
+font-family: "Futura Futuris Light C";
+font-size: vw(16px);
+font-weight: 400;
+}
+
+.footer-item {
+  h4 {
+    color: #000000;
+    font-family: "Futura Medium C";
+    font-size: vw(18px);
+    font-weight: 400;
+    margin-bottom: vw(10px);
+  }
+  p {
+    color: #aaaaaa;
+    font-family: "Futura Futuris Light C";
+    font-size: vw(16px);
+    font-weight: 900;
+    margin-bottom: 0;
+  }
+}
+
+.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 6px;
+    &:first-child {
+      margin: 0;
+    }
+    &:hover {
+      a {
+        svg {
+          path {
+            fill: #fe4040;
+          }
+          fill: #fe4040;
+        }
+      }
+    }
+    a {
+      display: block;
+      svg {
+        display: block;
+        fill: #000;
+        transition: 0.5s;
+        * {
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+  padding: vw(99px);
+  &.large {
+    padding: 0;
+  }
+  h4 {
+    color: #000000;
+    font-family: "Gilroy - Extra Bold";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 58px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: vw(55px);
+  }
+  form {
+    width: 100%;
+    max-width: 360px;
+    span {
+      display: block;
+      position: relative;
+      color: #000000;
+      font-family: "Futura Medium C";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      margin-bottom: 30px;
+        transition: 0.5s;
+      
+      &.focus {
+        color: #fe4040;
+      }
+      input {
+        display: block;
+        color: #767676;
+        font-family: "Futura Futuris Light C";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        border: 0;
+        border-bottom: 2px solid #000000;
+        transition: 0.5s;
+        width: 100%;
+        padding: 10px 0;
+        
+        
+        &:focus {
+          border-color: #fe4040;
+          
+          
+        }
+      }
+    }
+    button {
+      border: 0;
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px;
+      max-width: 160px;
+      cursor: pointer;
+    }
+  }
+}
+input::-webkit-input-placeholder {
+  transition: 0.5s;
+}
+input:-moz-placeholder {
+  transition: 0.5s;
+}
+input::-moz-placeholder {
+  transition: 0.5s;
+}
+input:-ms-input-placeholder {
+  transition: 0.5s;
+}
+input:focus::-webkit-input-placeholder {
+  text-indent: 1000px;
+}
+input:focus:-moz-placeholder {
+  text-indent: 1000px;
+}
+input:focus::-moz-placeholder {
+  text-indent: 1000px;
+}
+input:focus:-ms-input-placeholder {
+  text-indent: 1000px;
+}
+
+.footer_bottom {
+  background-color: #121212;
+  padding: 5px;
+}
+
+@-webkit-keyframes logo_glitch-anim-1 {
+  0% {
+    clip: rect(0px, 80px, 27px, 0); }
+  5% {
+    clip: rect(-7px, 80px, 19px, 0); }
+  10% {
+    clip: rect(34px, 80px, 47px, 0); }
+  15% {
+    clip: rect(29px, 80px, 56px, 0); }
+  20% {
+    clip: rect(3px, 80px, 30px, 0); }
+  25% {
+    clip: rect(42px, 80px, 22px, 0); }
+  30% {
+    clip: rect(-3px, 80px, 27px, 0); }
+  35% {
+    clip: rect(29px, 80px, 18px, 0); }
+  40% {
+    clip: rect(38px, 80px, 65px, 0); }
+  45% {
+    clip: rect(4px, 80px, 26px, 0); }
+  50% {
+    clip: rect(5px, 80px, 49px, 0); }
+  55% {
+    clip: rect(38px, 80px, 27px, 0); }
+  60% {
+    clip: rect(25px, 80px, 39px, 0); }
+  65% {
+    clip: rect(-7px, 80px, 17px, 0); }
+  70% {
+    clip: rect(-1px, 80px, 21px, 0); }
+  75% {
+    clip: rect(19px, 80px, 65px, 0); }
+  80% {
+    clip: rect(35px, 80px, 27px, 0); }
+  85% {
+    clip: rect(8px, 80px, 13px, 0); }
+  90% {
+    clip: rect(12px, 80px, 58px, 0); }
+  95% {
+    clip: rect(38px, 80px, 36px, 0); }
+  100% {
+    clip: rect(2px, 80px, 32px, 0); } }
+
+@keyframes logo_glitch-anim-1 {
+  0% {
+    clip: rect(0px, 80px, 27px, 0); }
+  5% {
+    clip: rect(-7px, 80px, 19px, 0); }
+  10% {
+    clip: rect(34px, 80px, 47px, 0); }
+  15% {
+    clip: rect(29px, 80px, 56px, 0); }
+  20% {
+    clip: rect(3px, 80px, 30px, 0); }
+  25% {
+    clip: rect(42px, 80px, 22px, 0); }
+  30% {
+    clip: rect(-3px, 80px, 27px, 0); }
+  35% {
+    clip: rect(29px, 80px, 18px, 0); }
+  40% {
+    clip: rect(38px, 80px, 65px, 0); }
+  45% {
+    clip: rect(4px, 80px, 26px, 0); }
+  50% {
+    clip: rect(5px, 80px, 49px, 0); }
+  55% {
+    clip: rect(38px, 80px, 27px, 0); }
+  60% {
+    clip: rect(25px, 80px, 39px, 0); }
+  65% {
+    clip: rect(-7px, 80px, 17px, 0); }
+  70% {
+    clip: rect(-1px, 80px, 21px, 0); }
+  75% {
+    clip: rect(19px, 80px, 65px, 0); }
+  80% {
+    clip: rect(35px, 80px, 27px, 0); }
+  85% {
+    clip: rect(8px, 80px, 13px, 0); }
+  90% {
+    clip: rect(12px, 80px, 58px, 0); }
+  95% {
+    clip: rect(38px, 80px, 36px, 0); }
+  100% {
+    clip: rect(2px, 80px, 32px, 0); } }
+
+@-webkit-keyframes logo_glitch-anim-2 {
+  0% {
+    clip: rect(-4px, 80px, 74px, 0); }
+  5% {
+    clip: rect(35px, 80px, 32px, 0); }
+  10% {
+    clip: rect(17px, 80px, 11px, 0); }
+  15% {
+    clip: rect(33px, 80px, 16px, 0); }
+  20% {
+    clip: rect(8px, 80px, 46px, 0); }
+  25% {
+    clip: rect(32px, 80px, 65px, 0); }
+  30% {
+    clip: rect(4px, 80px, 65px, 0); }
+  35% {
+    clip: rect(47px, 80px, 43px, 0); }
+  40% {
+    clip: rect(39px, 80px, 55px, 0); }
+  45% {
+    clip: rect(38px, 80px, 24px, 0); }
+  50% {
+    clip: rect(47px, 80px, 55px, 0); }
+  55% {
+    clip: rect(29px, 80px, 38px, 0); }
+  60% {
+    clip: rect(28px, 80px, 40px, 0); }
+  65% {
+    clip: rect(19px, 80px, 32px, 0); }
+  70% {
+    clip: rect(47px, 80px, 54px, 0); }
+  75% {
+    clip: rect(-8px, 80px, 57px, 0); }
+  80% {
+    clip: rect(19px, 80px, 39px, 0); }
+  85% {
+    clip: rect(38px, 80px, 61px, 0); }
+  90% {
+    clip: rect(40px, 80px, 19px, 0); }
+  95% {
+    clip: rect(-2px, 80px, 45px, 0); }
+  100% {
+    clip: rect(25px, 80px, 42px, 0); } }
+
+@keyframes logo_glitch-anim-2 {
+  0% {
+    clip: rect(-4px, 80px, 74px, 0); }
+  5% {
+    clip: rect(35px, 80px, 32px, 0); }
+  10% {
+    clip: rect(17px, 80px, 11px, 0); }
+  15% {
+    clip: rect(33px, 80px, 16px, 0); }
+  20% {
+    clip: rect(8px, 80px, 46px, 0); }
+  25% {
+    clip: rect(32px, 80px, 65px, 0); }
+  30% {
+    clip: rect(4px, 80px, 65px, 0); }
+  35% {
+    clip: rect(47px, 80px, 43px, 0); }
+  40% {
+    clip: rect(39px, 80px, 55px, 0); }
+  45% {
+    clip: rect(38px, 80px, 24px, 0); }
+  50% {
+    clip: rect(47px, 80px, 55px, 0); }
+  55% {
+    clip: rect(29px, 80px, 38px, 0); }
+  60% {
+    clip: rect(28px, 80px, 40px, 0); }
+  65% {
+    clip: rect(19px, 80px, 32px, 0); }
+  70% {
+    clip: rect(47px, 80px, 54px, 0); }
+  75% {
+    clip: rect(-8px, 80px, 57px, 0); }
+  80% {
+    clip: rect(19px, 80px, 39px, 0); }
+  85% {
+    clip: rect(38px, 80px, 61px, 0); }
+  90% {
+    clip: rect(40px, 80px, 19px, 0); }
+  95% {
+    clip: rect(-2px, 80px, 45px, 0); }
+  100% {
+    clip: rect(25px, 80px, 42px, 0); } }
+.rezart-logo {
+  float: right;
+  display: inline-block;
+  position: relative;
+  width: 60px;
+    height: 35px;
+  margin: -5px 0;
+  
+  svg {
+    fill: #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    fill: #fff;
+    width: 60px;
+    height: 35px;
+    z-index: 20;
+   /* &:nth-child(2) {
+      left: -1.5px;
+      -webkit-animation: logo_glitch-anim-1 2s infinite linear alternate-reverse;
+      animation: logo_glitch-anim-1 2s infinite linear alternate-reverse;
+    }
+    &:nth-child(3) {
+          left: 1.5px;
+    -webkit-animation: logo_glitch-anim-2 3s infinite linear alternate-reverse;
+    animation: logo_glitch-anim-2 3s infinite linear alternate-reverse;
+    }*/
+  }
+  &:hover {
+    svg {
+      fill: #b39c72;
+    }
+  }
+
+}
+
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1.2rem;
+    a {
+      color: #999999;
+      font-size: 0.8rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+      display: block;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+
+.mob-btn {
+  float: right;
+  padding-left: 15px;
+  display: none;
+}
+
+.success {
+  nav {
+    min-height: 62px;
+    .logo-text {
+      left: vw(99px);
+      top: vw(37px);
+    }
+    .phone {
+      color: #000000;
+      bottom: inherit;
+      top: vw(50px);
+      path {
+        fill: #000;
+      }
+    }
+  }
+  header {
+      min-height: 100vh;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding: 90px 0;
+      position: relative;
+    background: url('../images/bgthx.png') no-repeat center;
+    background-size: cover;
+    text-align: center;
+  }
+  .copyrighted {
+    position: absolute;
+    left: vw(97px);
+    bottom: vw(39px);
+    font-size: 16px; 
+    text-align: left;
+  }
+  .social {
+    position: absolute;
+    right: vw(97px);
+    bottom: vw(50px);
+    text-align: right;
+  }
+}
+
+.header-item {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  h1 {
+    color: #000000;
+    font-family: "Gilroy - Extra Bold";
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  p {
+    color: #767676;
+    font-family: "Futura Medium C";
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: vw(74px);
   }
 }
