@@ -1,15 +1,31 @@
 @import '../../mq';
 
 @media #{$tabletPortrait} {
-    @import '../mobile';
-  	& {
+  @import '../mobile';
+  & {
+    .container {
+      max-width: 555px;
+    }
+    .price {
       .container {
-        max-width: 555px;
+        max-width: 100%;
       }
-      .price {
-        .container {
-          max-width: 100%;
-        }
+    }
+    .head {
+
+      &:before {
+        content: "PINTOSEVICH";
+        opacity: 0.06;
+        color: #000000;
+        font-family: "Gilroy - Extra Bold";
+        font-size: 120px;
+        font-weight: 400;
+        text-transform: uppercase;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
       }
-	}
+    }
+  }
 }

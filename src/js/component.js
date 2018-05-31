@@ -82,6 +82,7 @@
       thumb_img = 'sddefault.jpg';
     }
 
+
     $thumb = $el.find('.ytp-thumbnail').css({
         'background-image': ['url(//img.youtube.com/vi/', id, '/', thumb_img, ')'].join('')
       })
@@ -120,7 +121,7 @@
 $(document).ready(function () {
   var review = $('.review-carousel');
   review.owlCarousel({
-    loop: false,
+    loop: true,
     margin: 0,
     nav: true,
     autoHeight: true,
@@ -136,8 +137,11 @@ $(document).ready(function () {
   review.on('changed.owl.carousel', function (event) {
     var index = event.item.index;
 
-    var activeEl = index + 1;
+    var activeEl = index - 8;
     var countEl = event.item.count;
+    if(activeEl == 0) {
+      activeEl = 17;
+    }
 
     if ((countEl - activeEl) < 5) {
       $('.review-carousel .owl-dots ').addClass('more-hide');
@@ -147,14 +151,15 @@ $(document).ready(function () {
     }
 
     console.log(event.item.count);
+    console.log(activeEl);
 
   });
 
   $('.review-tab_link li').click(function () {
-    $(this).parents('.col-lg-8').find('.review-tab_link li').removeClass('active');
-    $(this).parents('.col-lg-8').find('.tab-item').removeClass('active');
+    $(this).parents('.item').find('.review-tab_link li').removeClass('active');
+    $(this).parents('.item').find('.tab-item').removeClass('active');
     $(this).addClass('active');
-    $('#' + $(this).data('tab')).addClass('active');
+    $('[id='+$(this).data('tab')+']').addClass('active');
   });
 
 

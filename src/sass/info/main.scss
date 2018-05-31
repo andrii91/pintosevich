@@ -24,16 +24,21 @@ body {
   justify-content: center;
   padding: 90px 0;
   position: relative;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   padding: vw(43px) 0;
   z-index: 999;
   transition: 0.5s;
+//  max-width: 1930px;
   
   &.fixed {
     position: fixed;
@@ -1007,6 +1012,12 @@ margin-bottom: 50px;
         &:last-child {
           float: none;
         }
+        &:nth-child(13), &:nth-child(14), &:nth-child(15), &:nth-child(16) {
+          position: relative;
+              bottom: 0;
+              opacity: 1;
+              display: inline-block;
+        }
         &.active {
           +.owl-dot {
               position: relative;
@@ -1446,7 +1457,7 @@ margin-bottom: 50px;
   text-align: center;
   h5 {
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
     color: #767676;
     font-family: "Futura Medium C";
@@ -1520,7 +1531,7 @@ font-weight: 400;
     font-weight: 400;
     margin-bottom: vw(10px);
   }
-  p {
+  p, a {
     color: #aaaaaa;
     font-family: "Futura Futuris Light C";
     font-size: vw(16px);
@@ -1569,6 +1580,9 @@ font-weight: 400;
   padding: vw(99px);
   &.large {
     padding: 0;
+    max-width: 868px;
+    padding: vw(70px);
+    text-align: justify;
   }
   h4 {
     color: #000000;
@@ -1963,4 +1977,8 @@ input:focus:-ms-input-placeholder {
     font-weight: 400;
     margin-bottom: vw(74px);
   }
+}
+
+.bg-header {
+      background: linear-gradient(to right, #f9f9f9 0, #f9f9f9 50%, #fe4040 41%, #fe4040 100%);
 }

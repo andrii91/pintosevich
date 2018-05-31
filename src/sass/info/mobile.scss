@@ -196,6 +196,7 @@
   }
   .programs-item {
     margin-bottom: 20px;
+    padding-top: 30px;
   }
   .results {
     padding: 50px 0;
@@ -213,10 +214,11 @@
   }
   .results-item p {
     line-height: 1.2;
-    font-size: 14px;
   }
-  .results-item h4 {
-    font-size: 12px;
+  .results-item  {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 165px;
   }
   .trainers {
     padding: 50px 0;
@@ -248,6 +250,7 @@
   .info-item {
     padding-top: 20px;
     &:before {
+      display: none;
       z-index: -1;
     }
     br {
@@ -385,6 +388,7 @@
     max-width: 375px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 40px;
     h4 {
       margin-bottom: 10px;
     }
@@ -394,6 +398,9 @@
   }
   .price-item:last-child .timer {
     margin-top: 20px;
+  }
+  .countdownHolder {
+    margin-bottom: 20px;
   }
   .footer {
     text-align: center;
@@ -481,6 +488,56 @@
   }
   &.success .social {
     bottom: 6.60417vw;
+  }
+  .bg-header {
+    background:  0 0;
+  }
+  .head {
+    padding-bottom: 110px;
+    background: #f9f9f9;
+    .phone {
+      right: inherit;
+      left: 50%;
+      bottom: 60px;
+      transform: translateX(-50%);
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+    &:before {
+      content: "PINTOSEVICH";
+      opacity: 0.06;
+      color: #000000;
+      font-family: "Gilroy - Extra Bold";
+      font-size: 50px;
+      font-weight: 400;
+      text-transform: uppercase;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+  .lifestyle-new:before {
+    content: "body";
+    background: 0 0;
+    width: inherit;
+    height: inherit;
+     opacity: 0.06;
+      color: #000000;
+      font-family: "Gilroy - Extra Bold";
+      font-size: 220px;
+      font-weight: 400;
+      text-transform: uppercase;
+      position: absolute;
+      right: inherit;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+  }
+  .review:before {
+    font-size: 190px;
   }
 
 }

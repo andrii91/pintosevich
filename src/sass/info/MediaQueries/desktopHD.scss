@@ -3,6 +3,11 @@
 @media #{$desktopHD} {
     @import '../desktop';
     & {
+      .head {
+        .col-xl-3 {
+          padding-left: 75px;
+        }
+      }
 
     }
 }
