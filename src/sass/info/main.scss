@@ -13,7 +13,7 @@ body {
 }
 
 .head {
-  background: url('../images/bg1.png') no-repeat center;
+  background: url('../images/bg1.png') no-repeat center top;
   background-size: cover;
   min-height: 100vh;
   display: -ms-flexbox;
@@ -300,7 +300,7 @@ font-weight: 400;
 .head-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 65px;
   li {
     position: relative;
     color: #ffffff;
@@ -308,7 +308,8 @@ font-weight: 400;
     font-size: 16px;
     font-weight: 900;
     padding-left: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    line-height: 1.2;
     &:before {
       content: "";
       background: url('../images/arrow_right.svg') no-repeat center;
