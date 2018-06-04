@@ -103,6 +103,8 @@
     font-size: 60px;
     line-height: 1;
     margin-bottom: 20px;
+    
+    //    text-shadow: 1px 1px 1px #000;
     span {
       top: 20px;
       right: 0px;
@@ -185,7 +187,7 @@
   }
   .programs {
     padding: 50px 0;
-        background-position: 39% 50%;
+    background-position: 39% 50%;
   }
   .programs-title h2 {
     font-size: 32px;
@@ -216,7 +218,7 @@
   .results-item p {
     line-height: 1.2;
   }
-  .results-item  {
+  .results-item {
     margin-left: auto;
     margin-right: auto;
     max-width: 165px;
@@ -459,7 +461,8 @@
       font-size: 18px;
       margin-bottom: 10px;
     }
-    p, a {
+    p,
+    a {
       font-size: 16px;
       margin-bottom: 0;
     }
@@ -497,16 +500,20 @@
     bottom: 6.60417vw;
   }
   .bg-header {
-    background:  0 0;
+    background: 0 0;
   }
   .head {
-    padding-bottom: 110px;
-    background: #f9f9f9;
+    //    padding-bottom: 110px;
+    padding-bottom: 0;
+    background: url('../images/bg-mob.png') no-repeat;
+    background-position: 68% 100%;
+    background-size: 150%;
+    .registration-btn {
+      //      border: 1px solid #000;
+    }
     .phone {
-      right: inherit;
-      left: 50%;
-      bottom: 60px;
-      transform: translateX(-50%);
+      right: 10px;
+      bottom: 10px; //      transform: translateX(-50%);
     }
     .container {
       position: relative;
@@ -525,26 +532,34 @@
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
     }
+    .head-list {
+          margin-bottom: 50vw;
+    }
   }
   .lifestyle-new:before {
     content: "body";
     background: 0 0;
     width: inherit;
     height: inherit;
-     opacity: 0.06;
-      color: #000000;
-      font-family: "Gilroy - Extra Bold";
-      font-size: 120px;
-      font-weight: 400;
-      text-transform: uppercase;
-      position: absolute;
-      right: inherit;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+    opacity: 0.06;
+    color: #000000;
+    font-family: "Gilroy - Extra Bold";
+    font-size: 120px;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: absolute;
+    right: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
   .review:before {
     font-size: 190px;
   }
-
+  .review-carousel .after-photo {
+    min-height: inherit;
+  }
+  .review-tab_content .tab-item {
+    padding-bottom: 10px;
+  }
 }

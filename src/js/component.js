@@ -69,17 +69,17 @@
       .html(innerHtml.join(''));
 
     if (width > 640) {
-      thumb_img = 'maxresdefault.jpg';
+      thumb_img = 'hqdefault.jpg';
     } else if (width > 480) {
-      thumb_img = 'sddefault.jpg';
+      thumb_img = 'hqdefault.jpg';
     } else if (width > 320) {
-      thumb_img = 'sddefault.jpg';
+      thumb_img = 'hqdefault.jpg';
     } else if (width > 120) {
-      thumb_img = 'sddefault.jpg';
+      thumb_img = 'hqdefault.jpg';
     } else if (width == 0) { // sometimes it fails on fluid layout
-      thumb_img = 'sddefault.jpg';
+      thumb_img = 'hqdefault.jpg';
     } else {
-      thumb_img = 'sddefault.jpg';
+      thumb_img = 'hqdefault.jpg';
     }
 
 
@@ -136,11 +136,13 @@ $(document).ready(function () {
 
   review.on('changed.owl.carousel', function (event) {
     var index = event.item.index;
+    
+    
 
-    var activeEl = index - 8;
+    var activeEl = index - 11;
     var countEl = event.item.count;
     if(activeEl == 0) {
-      activeEl = 17;
+      activeEl = 24;
     }
 
     if ((countEl - activeEl) < 5) {
@@ -149,9 +151,9 @@ $(document).ready(function () {
       $('.review-carousel .owl-dots ').removeClass('more-hide');
 
     }
-
-    console.log(event.item.count);
-    console.log(activeEl);
+   /* console.log('index', index);
+    console.log('countEl', countEl);
+    console.log('activeEl', activeEl);*/
 
   });
 
@@ -432,6 +434,7 @@ $(function () {
   $('.countMinutes').append('<span class="title">минут</span>');
   $('.countSeconds').append('<span class="title">секунд</span>');
 
+/*
   function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
@@ -455,8 +458,9 @@ $(function () {
     $('input[name="country"]').val(response.country);
     $('input[name="region"]').val(response.region);
   }, "jsonp");
+*/
 
-  $('form').on('submit', function (e) {
+/*  $('form').on('submit', function (e) {
 
     e.preventDefault();
 
@@ -475,10 +479,10 @@ $(function () {
     setTimeout(function () {
       window.location.href = 'success.html';
     }, 1000);
-  });
+  });*/
 
 
-  function readCookie(name) {
+/*  function readCookie(name) {
     var n = name + "=";
     var cookie = document.cookie.split(';');
     for (var i = 0; i < cookie.length; i++) {
@@ -497,5 +501,5 @@ $(function () {
     if ($('.gclid_field').val() == '') {
       $('.gclid_field').val(readCookie('_gid'));
     }
-  }, 2000);
+  }, 2000);*/
 });

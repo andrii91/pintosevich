@@ -937,6 +937,7 @@ margin-bottom: 50px;
   .after-photo {
     max-width: 320px;
     text-align: center;
+    min-height: 230px;
     p {
     margin-top: 19px;
       color: #fe4040;
@@ -1013,7 +1014,7 @@ margin-bottom: 50px;
         &:last-child {
           float: none;
         }
-        &:nth-child(13), &:nth-child(14), &:nth-child(15), &:nth-child(16) {
+        &:nth-child(20), &:nth-child(21), &:nth-child(22), &:nth-child(23) {
           position: relative;
               bottom: 0;
               opacity: 1;
