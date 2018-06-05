@@ -562,4 +562,11 @@
   .review-tab_content .tab-item {
     padding-bottom: 10px;
   }
+  &.success header {
+    background-color: #f9f9f9;
+    background-size: 120%;
+    .header-item p br {
+      display: none;
+    }
+  }
 }
