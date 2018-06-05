@@ -133,6 +133,21 @@ $(document).ready(function () {
       }
     }
   });
+  $('.problems-carousel').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: false,
+    autoHeight: true,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    responsive: {
+      0: {
+        items: 1
+      }
+    }
+  });
 
   review.on('changed.owl.carousel', function (event) {
     var index = event.item.index;
